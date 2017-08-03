@@ -1,7 +1,7 @@
-import Home from './Movie';
+import Movie from './Movie';
 import MovieList from './MovieList'
 
 export {
-  Home,
+  Movie,
   MovieList
 };

@@ -1,7 +1,7 @@
 const movieReducer = (movieList = [], action) => {
   switch(action.type) {
     case 'GET_MOVIE':
-    return action.payload.movies;
+    return action.payload.data;
     default:
     return movieList;
   }

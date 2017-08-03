@@ -17,7 +17,7 @@ class MovieList extends Component {
         <ul>
           {this.props.movie.map((movie, i) => {
             return (
-              <Link to= {`/movies/${this.props.movie[i].id}`}> this.props.movie[i].title </Link>
+              <Link to= {`/movies/${this.props.movie[i].id}`}> {this.props.movie[i].title} </Link>
             )
           })}
         </ul>
