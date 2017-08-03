@@ -12,7 +12,7 @@ import reducers from './reducers';
 const createStoreMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreMiddleware(reducers)}>
+  <Provider store={createStoreMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <Router>
       <App />
     </Router>
