@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getMovie } from '../actions';
 import { Link } from 'react-router-dom';
+import { movieDetails } from '../actions';
 
 class MovieList extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class MovieList extends Component {
         <ul>
           {this.props.movie.map((movie, i) => {
             return (
-              <Link to= {`/movies/${this.props.movie[i].id}`}> {this.props.movie[i].title} </Link>
+              <Link to= {`/movies/${this.props.movie[i].id}`} onClick = {this.props.movieDetails(i)}> {this.props.movie[i].title} </Link>
             )
           })}
         </ul>
@@ -32,7 +33,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMovie: bindActionCreators(getMovie, dispatch)
+    getMovie: bindActionCreators(getMovie, dispatch),
+    movieDetails: bindActionCreators(movieDetails, dispatch)
   }
 }
 
